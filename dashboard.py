@@ -41,8 +41,8 @@ with col2:
         square=True
     )
 
-    ax.set_xlabel('')
-    ax.set_ylabel('')
+    ax.set_xlabel('Seat Number')
+    ax.set_ylabel('Row')
     ax.set_yticklabels([chr(i) for i in range(65, 65 + filled_matrix.shape[0])], rotation=0, color="#FFFFFF", fontsize=9)
     ax.set_xticklabels(range(1, filled_matrix.shape[1] + 1), rotation=0, color="#FFFFFF", fontsize=9)
     ax.tick_params(colors="#FFFFFF", labelsize=9, length=0)
