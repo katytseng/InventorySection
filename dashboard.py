@@ -23,6 +23,12 @@ with col1:
 
     filled_matrix, filled_seats = fill_seats(seat_matrix.values.copy(), pod_size, seat_gap, row_gap)
     st.markdown(f"### Total Filled Seats: {filled_seats}")
+    
+    filled_seat_img = Image.new('RGB', (20, 20), color='#0068c9')
+    empty_seat_img = Image.new('RGB', (15, 15), color='#dfdddd')
+    seat_legend_col1, seat_legend_col2 = st.columns([1, 3])
+    with seat_legend_col1: st.image(filled_seat_img, caption='Filled Seat')
+    with seat_legend_col2:st.image(empty_seat_img, caption='Empty Seat')
 
 with col2:
     filled_matrix, filled_seats = fill_seats(seat_matrix.values.copy(), pod_size, seat_gap, row_gap)
@@ -41,8 +47,8 @@ with col2:
         square=True
     )
 
-    ax.set_xlabel('Seat Number')
-    ax.set_ylabel('Row')
+    ax.set_xlabel('Seat Number', color="#FFFFFF", fontsize=9)
+    ax.set_ylabel('Row', color="#FFFFFF", fontsize=9)
     ax.set_yticklabels([chr(i) for i in range(65, 65 + filled_matrix.shape[0])], rotation=0, color="#FFFFFF", fontsize=9)
     ax.set_xticklabels(range(1, filled_matrix.shape[1] + 1), rotation=0, color="#FFFFFF", fontsize=9)
     ax.tick_params(colors="#FFFFFF", labelsize=9, length=0)
