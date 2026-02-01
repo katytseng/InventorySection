@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-# Create a 19x18 matrix filled with ones
 matrix = np.zeros((19, 18))
 
 # Set specific elements to 1 based on the given pattern
